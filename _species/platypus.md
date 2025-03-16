@@ -2,6 +2,8 @@
 layout: species
 short_name: mOrnAna
 name: Ornithorhynchus anatinus
+permalink: "/zwierzaki/species/platypus.html"
+
 taxon_id: 9258
 image: /assets/img/ornithorhynchus_anatinus.jpg
 image_attribution: CC BY-NC 2.0 Trevira1 (flickr)
