@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;/*Ustawia czcionkę dla całej strony*/
+    background-color: #FAF3E0; /* Kremowy kolor */
+    padding: 20px;/*Dodaje wewnętrzne odstępy wokół treści.*/
+    color: #333; /* Ciemnoszary kolor tekstu */
+}
+
+
+h1 {
+    text-align: center; /*Wyśrodkowuje nagłówek <h1> na stronie. czyli tytuł lista gatunków bo w index.html mam <h1>Lista Gatunków</h1>*/
+}
+
+.species-table {
+    width: 80%; /*Tabela zajmuje 80% szerokości strony.*/
+
+    margin: auto; /*wycentrowanie tabeli*/
+    border-collapse: collapse; /*usuwa odstępy między krawędziami komórek tabeli*/
+}
+/*obramowanie do każdej komórki tabeli, obejmuje nagłówki tabeli <th> oraz komórki tabeli <td> znajdujące się wewnątrz tabeli o klasie species.table*/
+.species-table th, .species-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.species-table th {
+    background-color: #4CAF50; /*Nadaje nagłówkom tabeli zielone tło.*/
+    color: white;/*Ustawia kolor tekstu na biały.*/
+    text-align: left;/*Wyrównuje tekst nagłówków do lewej.*/
+}
+
+.species-table img {
+    display: block; /*Obrazek jest traktowany jako blokowy element (umożliwia wycentrowanie)*/
+    margin: auto; /*Wycentrowuje obraz w komórce tabeli*/
+    width: 120px; /*Ustawia szerokość obrazka na 120 pikseli.*/
+    border-radius: 10px; /*Nadaje obrazkowi lekko zaokrąglone rogi*/
+}
+/* Styl dla spisu treści */
+.sidebar ul {
+    list-style: none; /*Usuwa domyślne znaczniki listy (•, - itp.).*/
+   
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+/* Styl dla linków w spisie treści */
+.sidebar ul li a {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #4CAF50;
+    background: #ffffff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Efekt hover (zmiana tła i koloru tekstu po najechaniu myszką) */
+.sidebar ul li a:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+.bionano {
+    background-color: #ffcccc;
+    border-left: 6px solid red;
+}

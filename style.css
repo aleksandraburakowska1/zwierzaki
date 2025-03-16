@@ -1,0 +1,57 @@
+/* Stylowanie całej strony */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Nagłówek */
+h1 {
+    text-align: center;
+}
+
+/* Stylowanie tabeli */
+.species-table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+/* Ramki tabeli */
+.species-table th, .species-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+/* Nagłówki tabeli */
+.species-table th {
+    background-color: #4CAF50;
+    color: white;
+    text-align: left;
+}
+
+/* Stylowanie obrazków */
+.species-table img {
+    display: block;
+    margin: auto;
+    width: 120px;
+    border-radius: 10px;
+}
+
+/* Styl dla gatunków z technologią Bionano */
+.bionano {
+    position: relative;
+}
+
+.bionano-label {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background-color: red;
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+}

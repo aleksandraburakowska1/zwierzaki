@@ -1,0 +1,70 @@
+---
+layout: default
+title: Strona główna
+---
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Gatunków</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<h1>Lista Gatunków</h1>
+
+<table class="species-table">
+    <thead>
+        <tr>
+            <th style="width: 15%; background-color: #4CAF50; color: white;">Zdjęcie</th>
+            <th style="width: 30%; background-color: #4CAF50; color: white;">Nazwa angielska / Łacińska</th>
+            <th style="width: 30%; background-color: #4CAF50; color: white;">Rodzina / Rząd</th>
+            <th style="width: 15%; background-color: #4CAF50; color: white;">Liczba zasobów</th>
+        </tr>
+    </thead>
+   <tbody>
+    {% for species in site.species %}
+    <tr>
+        <td style="position: relative; text-align: center;">
+            {% for sample in species.samples %}
+                {% if sample.datatype == 'Bionano' %}
+                    <div class="bionano-label" style="position: absolute; top: -10px; left: -10px; background: red; color: white; padding: 5px; font-size: 12px; font-weight: bold; border-radius: 3px;">
+                        Bionano
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+            {% if species.image %}
+                <a href="{{ species.url }}">
+                    <img src="{{ species.image }}" alt="{{ species.title }}" style="width: 120px; height: auto; border-radius: 8px;">
+                </a>
+                <p style="font-size: 12px; margin: 5px 0;">{{ species.image_attribution }}</p>
+            {% else %}
+                <p>Brak zdjęcia</p>
+            {% endif %}
+        </td>
+
+        <td>
+            <strong>{{ species.common_name | default: "Brak danych" }}</strong> <br>
+            <i>{{ species.name | default: "Brak danych" }}</i>
+        </td>
+
+        <td>
+            {{ species.taxonomy.family | default: "Brak danych" }} /
+            {{ species.taxonomy.order | default: "Brak danych" }}
+        </td>
+
+        <td style="text-align: center;">{{ species.samples | size }}</td>
+    </tr>
+    {% endfor %}
+</tbody>
+
+
+</table>
+<footer style="margin-top: 20px; text-align: center;">Autor: Aleksandra Burakowska</footer>
+
+</body>
+</html>
+

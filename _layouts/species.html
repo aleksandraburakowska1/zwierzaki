@@ -1,0 +1,155 @@
+---
+layout: default
+---
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.common_name }} - {{ page.name }}</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+        .sidebar {
+            width: 25%;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+        .sidebar a {
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+            color: #333;
+            border-radius: 5px;
+        }
+        .sidebar a:hover {
+            background: #4CAF50;
+            color: white;
+        }
+        .content {
+            width: 75%;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .image-container {
+            text-align: right;
+        }
+        .image-container img {
+            max-width: 250px;
+            border-radius: 10px;
+        }
+        .taxonomy, .sequencing, .description {
+            margin-bottom: 30px;
+        }
+        .sequencing-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .sequencing-table th, .sequencing-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .sequencing-table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+        .social-icons {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .social-icons a {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Spis treści -->
+    <nav class="sidebar">
+        <h3>Spis treści</h3>
+        <a href="#taxonomy">📌 Taksonomia</a>
+        <a href="#sequencing">🧬 Sekwencjonowanie</a>
+        <a href="#description">📖 Opis</a>
+    </nav>
+
+    <!-- Główna treść -->
+    <div class="content">
+        <h1>{{ page.common_name }} <i>({{ page.name }})</i></h1>
+
+        <!-- Zdjęcie w prawym górnym rogu -->
+        <div class="image-container">
+            <img src="{{ page.image }}" alt="{{ page.common_name }}">
+            <p><small>Źródło: {{ page.image_attribution }}</small></p>
+        </div>
+
+        <!-- Sekcja Taksonomia -->
+        <section id="taxonomy" class="taxonomy">
+            <h2>📌 Taksonomia</h2>
+            <p><strong>Rodzina:</strong> {{ page.taxonomy.family | default: "Brak danych" }}</p>
+            <p><strong>Rząd:</strong> {{ page.taxonomy.order | default: "Brak danych" }}</p>
+        </section>
+
+        <!-- Sekcja Sekwencjonowanie -->
+        <section id="sequencing" class="sequencing">
+            <h2>🧬 Sekwencjonowanie</h2>
+            <table class="sequencing-table">
+                <tr>
+                    <th>Typ</th>
+                    <th>Pokrycie</th>
+                    <th>Bazy</th>
+                    <th>Rozmiar</th>
+                    <th>Link</th>
+                </tr>
+                {% for item in page.samples %}
+                <tr>
+                    <td><strong>{{ item.datatype }}</strong></td>
+                    <td>{{ item.coverage }}x</td>
+                    <td>{{ item.bases }} Gbp</td>
+                    <td>{{ item.bytes }}</td>
+                    <td><a href="{{ item.url }}" target="_blank">🔗 Zobacz</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </section>
+
+        <!-- Sekcja Opis -->
+        <section id="description" class="description">
+            <h2>📖 Opis</h2>
+            {{ content }}
+        </section>
+    </div>
+</div>
+
+<!-- Ikony społecznościowe -->
+<div class="social-icons">
+    <a href="https://facebook.com" target="_blank"><img src="/assets/img/facebook.png" width="40"></a>
+    <a href="https://twitter.com" target="_blank"><img src="/assets/img/twitter.png" width="40"></a>
+    <a href="https://linkedin.com" target="_blank"><img src="/assets/img/linkedin.png" width="40"></a>
+</div>
+
+</body>
+</html>
+
