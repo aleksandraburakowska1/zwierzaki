@@ -38,7 +38,8 @@ title: Strona główna
             {% endfor %}
 
             {% if species.image %}
-                <a href="{{ species.url }}">
+                <a href="{{ site.baseurl }}/species/{{ species.name | slugify }}.html">
+
                     <img src="{{ site.baseurl }}/{{ species.image }}" alt="{{ species.common_name }}">
 
 
