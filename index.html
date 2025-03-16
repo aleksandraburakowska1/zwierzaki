@@ -39,7 +39,8 @@ title: Strona główna
 
             {% if species.image %}
                 <a href="{{ species.url }}">
-                    <img src="{{ species.image }}" alt="{{ species.title }}" style="width: 120px; height: auto; border-radius: 8px;">
+                    <img src="{{ site.baseurl }}/assets/img/{{ species.image }}" alt="{{ species.title }}" style="width: 120px; height: auto; border-radius: 8px;">
+
                 </a>
                 <p style="font-size: 12px; margin: 5px 0;">{{ species.image_attribution }}</p>
             {% else %}
