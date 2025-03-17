@@ -1,10 +1,10 @@
 ---
 layout: species
 title: "Lemur catta"
-permalink: "/zwierzaki/species/Lemur_catta.html"
+permalink: "/zwierzaki/species/lemur_catta.html"
 
 redirect_to:
-  - "/zwierzaki/species/Lemur_catta.html"
+  - "/zwierzaki/species/lemur_catta.html"
 common_name: "Ring-tailed lemur"
 name: "Lemur catta"
 genome_size: 3.3 Gbp
