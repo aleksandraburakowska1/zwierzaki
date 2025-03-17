@@ -1,7 +1,7 @@
 ---
 layout: species
 title: "Lemur catta"
-permalink: "/zwierzaki/species/lemur_catta.html"
+permalink: "/zwierzaki/species/lemur-catta.html"
 
 redirect_to:
   - "/zwierzaki/species/lemur_catta.html"
