@@ -37,6 +37,7 @@ plugins:
 collections:
   species:
     output: true
+    permalink: /zwierzaki/species/:name.html
 theme: minima 
 # Exclude from processing.
 # The following items will not be processed, by default.
